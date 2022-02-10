@@ -3,8 +3,10 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract LW3Punks is ERC721Enumerable, Ownable {
+    using Strings for uint256;
     /**
      * @dev _baseTokenURI for computing {tokenURI}. If set, the resulting URI for each
      * token will be the concatenation of the `baseURI` and the `tokenId`.
@@ -53,6 +55,17 @@ contract LW3Punks is ERC721Enumerable, Ownable {
     */
     function _baseURI() internal view virtual override returns (string memory) {
         return _baseTokenURI;
+    }
+
+    /**
+    * @dev tokenURI overides the Openzeppelin's ERC721 implementation for tokenURI function
+    * This function returns the URI from where we can extract the metdata for a given tokenId
+    */
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
+        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+
+        string memory baseURI = _baseURI();
+        return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenId.toString(), ".json")) : "";
     }
      
     /**
