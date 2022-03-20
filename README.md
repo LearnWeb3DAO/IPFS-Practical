@@ -16,7 +16,7 @@ Lets start building 🚀
 
 ## Prerequisites
 
-- You can have completed the [IPFS Theory tutorial](https://github.com/LearnWeb3DAO/IPFS-Theory)
+- You should have completed the [IPFS Theory tutorial](https://github.com/LearnWeb3DAO/IPFS-Theory)
 
 ## Build
 
