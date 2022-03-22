@@ -537,7 +537,7 @@ and press `enter` for all the questions.
             renderButton: Returns a button based on the state of the dapp
           */
           const renderButton = () => {
-            // If wallet is not connected, return a button which allows them to connect their wllet
+            // If wallet is not connected, return a button which allows them to connect their wallet
             if (!walletConnected) {
               return (
                 <button onClick={connectWallet} className={styles.button}>
