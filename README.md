@@ -149,7 +149,7 @@ and press `enter` for all the questions.
             }
 
             /**
-            * @dev mint allows an user to mint 1 NFT per transaction after the presale has ended.
+            * @dev mint allows an user to mint 1 NFT per transaction.
             */
             function mint() public payable onlyWhenNotPaused {
                 require(tokenIds < maxTokenIds, "Exceed maximum LW3Punks supply");
@@ -336,7 +336,7 @@ and press `enter` for all the questions.
   npm install ethers
   ```
   
-- In your public folder, download this folder and all the images in it (https://github.com/LearnWeb3DAO/IPFS-Practical/tree/master/my-app/public/LW3punks). Make sure that the name of the downloaded folder is `LW3Punks`
+- In your public folder, download this folder and all the images in it [the LW3Punks folder](https://github.com/LearnWeb3DAO/IPFS-Practical/tree/master/my-app/public/LW3punks). Make sure that the name of the downloaded folder is `LW3Punks`
 - Now go to styles folder and replace all the contents of `Home.modules.css` file with the following code, this would add some styling to your dapp:
 
     ```css
@@ -537,7 +537,7 @@ and press `enter` for all the questions.
             renderButton: Returns a button based on the state of the dapp
           */
           const renderButton = () => {
-            // If wallet is not connected, return a button which allows them to connect their wllet
+            // If wallet is not connected, return a button which allows them to connect their wallet
             if (!walletConnected) {
               return (
                 <button onClick={connectWallet} className={styles.button}>
