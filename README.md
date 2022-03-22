@@ -149,7 +149,7 @@ and press `enter` for all the questions.
             }
 
             /**
-            * @dev mint allows an user to mint 1 NFT per transaction after the presale has ended.
+            * @dev mint allows an user to mint 1 NFT per transaction.
             */
             function mint() public payable onlyWhenNotPaused {
                 require(tokenIds < maxTokenIds, "Exceed maximum LW3Punks supply");
