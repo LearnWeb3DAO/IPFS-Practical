@@ -590,7 +590,7 @@ and press `enter` for all the questions.
 - Now create a new folder under the my-app folder and name it `constants`.
 - In the constants folder create a file, `index.js` and paste the following code.
 
-  - Replace `"addres of your NFT contract"` with the address of the LW3Punks contract that you deployed and saved to your notepad.
+  - Replace `"address of your NFT contract"` with the address of the LW3Punks contract that you deployed and saved to your notepad.
   - Replace `---your abi---` with the abi of your LW3Punks Contract. To get the abi for your contract, go to your `hardhat-tutorial/artifacts/contracts/LW3Punks.sol` folder and from your `LW3Punks.json` file get the array marked under the `"abi"` key.
 
   ```js
