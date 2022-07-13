@@ -86,17 +86,17 @@ To build the smart contract we would be using [Hardhat](https://hardhat.org/). H
   npx hardhat
   ```
 
-  - Select `Create a basic sample project`
+  - Select `Create a Javascript project`
   - Press enter for the already specified `Hardhat Project root`
   - Press enter for the question on if you want to add a `.gitignore`
-  - Press enter for `Do you want to install this sample project's dependencies with npm (@nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers)?`
+  - Press enter for `Do you want to install this sample project's dependencies with npm (@nomicfoundation/hardhat-toolbox)?`
 
 Now you have a hardhat project ready to go!
 
 If you are not on mac, please do this extra step and install these libraries as well :)
 
 ```bash
-npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
+npm install --save-dev @nomicfoundation/hardhat-toolbox
 ```
 and press `enter` for all the questions.
 
@@ -226,7 +226,7 @@ and press `enter` for all the questions.
   MUMBAI_PRIVATE_KEY="add-the-mumbai-private-key-here"
   ```
  
- - Lets deploy the contract to `mumbai` network. Create a new file named `deploy.js` under the `scripts` folder. Remember to replace `YOUR-METADATA-CID` with the CID you saved to your notepad.
+ - Lets deploy the contract to `mumbai` network. Create a new file, or replace the existing default one, named `deploy.js` under the `scripts` folder. Remember to replace `YOUR-METADATA-CID` with the CID you saved to your notepad.
 
     ```javascript
     const { ethers } = require("hardhat");
@@ -261,10 +261,10 @@ and press `enter` for all the questions.
     ```
 
 
-- Now open the hardhat.config.js file, we would add the `mumbai` network here so that we can deploy our contract to mumbai. Replace all the lines in the `hardhart.config.js` file with the given below lines
+- Now open the hardhat.config.js file, we would add the `mumbai` network here so that we can deploy our contract to mumbai. Replace all the lines in the `hardhat.config.js` file with the given below lines
 
     ```javascript
-    require("@nomiclabs/hardhat-waffle");
+    require("@nomicfoundation/hardhat-toolbox");
     require("dotenv").config({ path: ".env" });
 
     const ALCHEMY_API_KEY_URL = process.env.ALCHEMY_API_KEY_URL;
@@ -590,7 +590,7 @@ and press `enter` for all the questions.
 - Now create a new folder under the my-app folder and name it `constants`.
 - In the constants folder create a file, `index.js` and paste the following code.
 
-  - Replace `"addres of your NFT contract"` with the address of the LW3Punks contract that you deployed and saved to your notepad.
+  - Replace `"address of your NFT contract"` with the address of the LW3Punks contract that you deployed and saved to your notepad.
   - Replace `---your abi---` with the abi of your LW3Punks Contract. To get the abi for your contract, go to your `hardhat-tutorial/artifacts/contracts/LW3Punks.sol` folder and from your `LW3Punks.json` file get the array marked under the `"abi"` key.
 
   ```js
