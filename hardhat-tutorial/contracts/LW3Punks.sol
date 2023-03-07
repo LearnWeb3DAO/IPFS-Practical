@@ -40,7 +40,7 @@ contract LW3Punks is ERC721Enumerable, Ownable {
     }
 
     /**
-    * @dev mint allows an user to mint 1 NFT per transaction after the presale has ended.
+    * @dev mint allows a user to mint 1 NFT per transaction after the presale has ended.
     */
     function mint() public payable onlyWhenNotPaused {
         require(tokenIds < maxTokenIds, "Exceed maximum LW3Punks supply");
